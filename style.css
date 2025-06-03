@@ -5,12 +5,17 @@
 
 /* Set a soft textured background for the whole page */
 body {
-  background-image: url('assets/offwhite-background.jpg');
+  background-color: palevioletred;
+  font-family: "Quicksand", sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: sans-serif;
   padding: 16px; /* Adds space around edges on small screens */
+}
+
+h1, h2 {
+  font-family: 'Pacifico', cursive;
 }
 
 /* Header polish */
@@ -21,14 +26,20 @@ h1 {
 
 /* Limit image dimensions so tiles don’t overflow the layout */
 img {
-  max-height: 250px;
-  max-width: 250px;
+  width: 250px;           /* Make image a square */
+  height: 250px;
+  object-fit: cover;      /* Maintain aspect ratio, cover the square */
+  max-width: 100%;        /* Responsive for smaller screens */
+  max-height: 100%;
+  border-radius: 12px;    /* Optional: rounded corners */
 }
 
 /* Optional decorative border for each tile */
 .border-tile {
   border: 20px solid transparent;
-  border-image: url('assets/wood.jpg') 30 round;
+  border-image: url('assets/paw-bg.jpg');
+  border-image-slice: 20;         /* Slices the image to fit the border width */
+  border-image-repeat: round;     /* Repeats and scales the image to fill the border */
   padding: 5px;
   background-color: white;
 }
@@ -39,6 +50,10 @@ img {
   margin-top: 8px;
   font-size: 14px;
   color: #444;
+}
+
+.container {
+  background-color: whitesmoke;
 }
 
 /* 💡 Optional Enhancements:
