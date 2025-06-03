@@ -12,7 +12,6 @@ body {
   background-attachment: fixed;
   font-family: sans-serif;
   padding: 16px; /* Adds space around edges on small screens */
-  color: #f6f6f7;
 }
 
 h1, h2 {
@@ -37,8 +36,15 @@ img {
 /* Optional decorative border for each tile */
 .border-tile {
   border: 20px solid;
-  border-image: url('assets/rainbow-paw.png');
-  background-color: #f6f6f7;
+  border-image: url('assets/rainbow-bg.jpg');
+  border-image-slice: 20;         /* Slices the image to fit the border width */
+  border-image-repeat: stretch;   /* Stretches the image to fill the border */
+}
+
+/* Thin border for the first image */
+.border-tile-thin {
+  border-width: 3px !important;         /* Override to 3px */
+  border-image-slice: 3 !important;     /* Match the thin border */
 }
 
 /* Optional caption style if you add labels under your tiles */
@@ -51,9 +57,17 @@ img {
 
 .dark-box {
   background-color: #111;
-  border: 3px solid #f6f6f7;
 }
 
+.rainbow-box {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), /* White opacity filter */
+    url(assets/rainbow-bg.jpg); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;    /* Make image cover the whole box */
+  background-position: center; /* Center the image */
+  border: 3px solid #111;
+}
 /* 💡 Optional Enhancements:
    - Try adding a hover effect with transform and box-shadow
    - Use border-radius for rounded image corners
