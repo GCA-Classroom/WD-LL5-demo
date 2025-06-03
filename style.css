@@ -12,6 +12,7 @@ body {
   background-attachment: fixed;
   font-family: sans-serif;
   padding: 16px; /* Adds space around edges on small screens */
+  color: #f6f6f7;
 }
 
 h1, h2 {
@@ -26,22 +27,18 @@ h1 {
 
 /* Limit image dimensions so tiles don’t overflow the layout */
 img {
-  width: 250px;           /* Make image a square */
-  height: 250px;
-  object-fit: cover;      /* Maintain aspect ratio, cover the square */
-  max-width: 100%;        /* Responsive for smaller screens */
-  max-height: 100%;
+  width: 250px;           /* Fixed width for all images */
+  height: 250px;          /* Fixed height for all images (square) */
+  object-fit: cover;      /* Image covers the box, keeps aspect ratio */
   border-radius: 12px;    /* Optional: rounded corners */
+  /* max-width and max-height are not needed since we want fixed size */
 }
 
 /* Optional decorative border for each tile */
 .border-tile {
-  border: 20px solid transparent;
-  border-image: url('assets/paw-bg.jpg');
-  border-image-slice: 20;         /* Slices the image to fit the border width */
-  border-image-repeat: round;     /* Repeats and scales the image to fill the border */
-  padding: 5px;
-  background-color: white;
+  border: 20px solid;
+  border-image: url('assets/rainbow-paw.png');
+  background-color: #f6f6f7;
 }
 
 /* Optional caption style if you add labels under your tiles */
@@ -52,8 +49,9 @@ img {
   color: #444;
 }
 
-.container {
-  background-color: whitesmoke;
+.dark-box {
+  background-color: #111;
+  border: 3px solid #f6f6f7;
 }
 
 /* 💡 Optional Enhancements:
